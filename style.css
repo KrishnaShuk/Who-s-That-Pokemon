@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+   font-family: "Roboto", sans-serif;
+ }
+
+
+body {
+    margin: 0;                
+    padding: 0;              
+    height: 100vh;
+    background-image: url('./assets/pokemon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    position: relative;
+    align-items: center;
+    max-width: 500px;
+    width: 50%;
+    max-height: 700px;
+    height: 80%;
+    background: #fff;
+    padding: 25px;
+    border-radius:5%;
+    opacity: 1;
+}
+.container h1{
+    display: flex;
+    justify-content: center;
+    text-shadow: 0px 0px 1px #000000;
+}
+
+.image-grid {
+    justify-content: center;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.image-grid img {
+    position: relative;
+    max-width: 150px;
+    width:70%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: filter 0.5s ease; /* Smooth transition for silhouette effect */
+    opacity: 1;
+}
+  .silhouette {
+    filter: brightness(0%) contrast(100%); /* Make the image a silhouette */
+}
+
+.revealed {
+    filter: none; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.enlarged {
+    transform: scale(1.2); /* Enlarge the image by 1.5 times */
+    z-index: 10; /* Ensure the enlarged image is above other elements */
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+#pokemon-name, #pokemon-type, #pokemon-abilities, #pokemon-description, #guess-result {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+#guess-result{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+#pokemon-name{
+    font-size: 30px;
+}
+
+#pokemon-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 200px; /* Adjust size to fit within the background */
+    height: auto;
+    z-index: 1;
+}
+
+.container-details {
+    text-align: center;
+}
+
+#back-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: #0056b3;
+}
+
+#score {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.pokemon-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    background-image: url('./assets/winner.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px; 
+}
+
+
+:root {
+    --primary-color: #007BFF;
+    --primary-color-hover: #0056b3;
+    --text-color: #333;
+    --background-color: #fff;
+  }
+  
+ 
+  button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
+  
+  button:hover {
+    background-color: var(--primary-color-hover);
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+
+
+
+
+
+
+
+

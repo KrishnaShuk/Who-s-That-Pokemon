@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's that Pokemon?</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <audio id="background-music" loop>
+                <source src="./assets/retro-groove-202425.mp3" type="audio/mpeg">
+            </audio>
+            
+            <h1>Who's that pokemon?</h1>
+            <form id="guess-form">
+                <label for="pokemon-guess">Enter your guess:</label>
+                <input type="text" id="pokemon-guess" name="pokemon-guess" placeholder="Enter Pokémon name" required>
+                <button type="submit">Submit Guess</button>
+            </form>
+            <div id="image-grid" class="image-grid">
+            </div>
+            <p id="result"></p>
+            
+            <button id="refresh-button">Refresh Pokémon</button>
+        </div>
+    </div>
+    <script src="pokemon.js"></script>
+    <script src="audio.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-music');
+
+            if (sessionStorage.getItem('playMusic') === 'true') {
+                audio.play().catch(error => {
+                    console.error('Auto-play failed:', error);
+                });
+            }
+
+            const playButton = document.getElementById('play-music');
+            if (playButton) {
+                playButton.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playButton.textContent = 'Pause Music';
+                    } else {
+                        audio.pause();
+                        playButton.textContent = 'Play Music';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
